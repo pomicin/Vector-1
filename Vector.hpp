@@ -3,7 +3,6 @@
 
 #include <initializer_list>
 #include <iostream>
-#include <optional>
 #include <iterator>
 #include <memory>
 #include <cstring>
