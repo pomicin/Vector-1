@@ -157,7 +157,7 @@ struct Vector {
     return *this;
   }
 
-  Vector<value_type, N>& operator-=(const Vector<value_type, N>& other) {
+  Vector<value_type, N>& operator-=(Vector<value_type, N>& other) {
     #pragma omp simd
     for(unsigned int i = 0; i < size(); i++)
       m_Data[i] -= other.m_Data[i];
@@ -165,7 +165,7 @@ struct Vector {
     return *this;
   }
 
-  Vector<value_type, N>& operator*=(const_reference scalar) {
+  Vector<value_type, N>& operator*=(reference scalar) {
     #pragma omp simd
     for(unsigned int i = 0; i < size(); i++)
       m_Data[i] *= scalar;
@@ -173,7 +173,7 @@ struct Vector {
     return *this;
   }
 
-  Vector<value_type, N>& operator/=(const_reference scalar) {
+  Vector<value_type, N>& operator/=(reference scalar) {
     #pragma omp simd
     for(unsigned int i = 0; i < size(); i++)
       m_Data[i] /= scalar;
